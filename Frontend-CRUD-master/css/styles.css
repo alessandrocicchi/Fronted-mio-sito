@@ -1,0 +1,281 @@
+.table td,
+.table th{
+    text-align: center;
+}
+
+.cursor-point{
+    cursor: pointer;
+}
+
+.spin:focus{
+    animation: spin 500ms ease-out 150ms;
+}
+
+@keyframes spin {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+}
+
+.btn-delete{
+  position: relative;
+  transition: 100ms ease-out;
+}
+
+.btn-delete:hover,
+.btn-delete:active{
+  color: transparent;
+}
+
+.btn-delete:active{
+  transform: scale(110%);
+}
+
+.btn-delete::before{
+  content: "\2715";
+  font-weight: bolder;
+  position: absolute;
+  font-size: 24px;
+  color:white;
+  top: -30%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0%;
+
+  transition: 100ms ease-out;
+}
+
+.btn-delete:hover::before,
+.btn-delete:active::before{
+  opacity: 100%;
+  top: 0%;
+}
+
+.levitate{
+  position: relative;
+  transition: 300ms ease-out;
+}
+
+.levitate:active{
+  transform: translate3d(0, -0.5em, 0);
+}
+
+.levitate::before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 75%;
+  left: -17.5%;
+  width: 135%;
+  height: 30%;
+  background-color: black;
+  filter: blur(0em);
+  transition: 300ms ease-out;
+  opacity: 0%;
+  transform: perspective(3em) rotateX(10deg) translate3d(0em, 0em, -1em);
+}
+
+.levitate:active::before{
+  opacity: 100%;
+  filter: blur(0.5em);
+  transform: perspective(3em) rotateX(10deg) translate3d(0em, 0.75em, -1em);
+}
+
+.header {
+  color:white;
+  background-color: darkorange;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+.disabled{
+  pointer-events: none;
+}
+
+.xl{
+  font-size: 60px;
+}
+
+html, body {
+  margin:0;
+  padding:0;
+}
+
+.table >tr,
+.table th,
+.table td{
+  border: 2px solid cornflowerblue;
+  padding: 5px;
+  width: 15rem;
+  color: chocolate;
+  text-align: center;
+  background-color: bisque;
+}
+
+.table {
+  border: 2px solid cornflowerblue;
+  border-collapse: collapse;
+  padding: 0;
+  margin: 0;
+}
+
+.header-table {
+  padding: 0;
+  margin: 0;
+  
+}
+
+.header-table *{
+  padding: 0;
+  margin: 0;
+  width: calc(15rem + 10px);
+  color: cornflowerblue;
+  text-align: center;
+}
+
+.dim-background{
+  background: #E0E0E0;
+}
+
+.paging-button{
+  width: 6em;
+  height: 3em;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  background-color: darkcyan;
+  color: aquamarine;
+  border: 1px solid darkcyan;
+  border-radius: 5px;
+  user-select: none;
+
+  transition: 500ms ease-out;
+}
+
+.button{
+  width: 6em;
+  height: 3em;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  background-color: darkviolet;
+  color: pink;
+
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  padding-right: 10px;
+  transition: 100ms ease-in;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  }
+
+.radio-container{
+  position: relative;
+}
+
+.m-radio::before {
+  content: "M";
+  position: absolute;
+  top: 0;
+  left: 40%;
+}
+
+label{
+  display: contents;
+}
+
+.f-radio::before {
+  content: "F";
+  position: absolute;
+  top: 1.4em;
+  left: 40%;
+}
+
+.display-none{
+  display: none;
+}
+
+.save-button{
+  user-select: none;
+  background: crimson;
+  color: aliceblue;
+  font-weight: bold;
+  font-size: large;
+  border: none;
+  border-radius: 4px;
+  width: 6rem;
+  height: 2em;
+  box-shadow: 0px 4px #080;
+  transition: 100ms ease-in;
+  margin-right: 5px;
+}
+
+.save-button:active{
+  transform: translateY(3px);
+  box-shadow: 0px 1px #555;
+}
+
+.change-button{
+  user-select: none;
+  background: violet;
+  color: darkorchid;
+  font-weight: bold;
+  font-size: large;
+  border: none;
+  border-radius: 4px;
+  width: 6rem;
+  height: 2em;
+  box-shadow: 0px 4px tomato;
+  transition: 100ms ease-in;
+  margin-right: 5px;
+}
+
+.delete-button{
+  user-select: none;
+  background: red;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  border: none;
+  border-radius: 4px;
+  width: 6rem;
+  height: 2em;
+  box-shadow: 0px 4px #666666;
+  transition: 100ms ease-in;
+}
+
+.delete-button:active{
+  transform: translateY(3px);
+  box-shadow: 0px 1px #444444;
+}
+
+.delete-button{
+  user-select: none;
+  background: cadetblue;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  border: none;
+  border-radius: 4px;margin:0;
+  padding:0;
+  width: 6rem;
+  height: 2em;
+  box-shadow: 0px 4px #BB0000;
+  transition: 100ms ease-in;
+}
